@@ -162,10 +162,10 @@ const ExamplePayload1: CreateHPDServiceRequestPayload = {
   "whattimeofdaydoestheproblemoccur" : TimeOfDay.from9amTo12pm,
   "apartmentNumber" : "1A",
   "contact" : {
-      "firstName" : "Alfred",
-      "lastName" : "Eng",
-      "notificationEmail" : "aeng@doitt.nyc.gov",
-      "primaryPhone" : "1234567890"
+    "firstName" : "Alfred",
+    "lastName" : "Eng",
+    "notificationEmail" : "aeng@doitt.nyc.gov",
+    "primaryPhone" : "1234567890"
   }
 };
 
