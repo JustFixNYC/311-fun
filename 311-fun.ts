@@ -75,15 +75,15 @@ enum ServiceRequestSource {
 /** Represents a time of day in a service request. */
 enum TimeOfDay {
   /** 9 AM - 12 PM */
-  _0900_to_1200 = 614110000,
+  from9amTo12pm = 614110000,
   /** 12 PM - 4 PM */
-  _1200_to_1600 = 614110001,
+  from12pmTo4pm = 614110001,
   /** 4 PM - 9 PM */
-  _1600_to_2100 = 614110002,
+  from4pmTo9pm = 614110002,
   /** 9 PM - 11 PM */
-  _2100_to_2300 = 614110003,
+  from9pmTo11pm = 614110003,
   /** 11 PM - 9 AM */
-  _2300_to_0900 = 614110004,
+  from11pmTo9am = 614110004,
   /** All the time */
   allTheTime = 614110005
 }
@@ -150,7 +150,7 @@ const ExamplePayload1: CreateHPDServiceRequestPayload = {
   "locationType" : "Apartment",
   "problem" : "Heat/Hot Water",
   "problemDetails" : "Apartment Only",
-  "srsource" : 614110000,
+  "srsource" : ServiceRequestSource.Android,
   "additionalDetails" : "No Heat",
   "agency" : "HPD",
   "anonymousRequired" : "No",
@@ -159,7 +159,7 @@ const ExamplePayload1: CreateHPDServiceRequestPayload = {
   "includeContactInfo" : true,
   "locationDetails" : "Bedroom",
   "siteBorough" : "BROOKLYN",
-  "whattimeofdaydoestheproblemoccur" : 614110000,
+  "whattimeofdaydoestheproblemoccur" : TimeOfDay.from9amTo12pm,
   "apartmentNumber" : "1A",
   "contact" : {
       "firstName" : "Alfred",
