@@ -72,6 +72,22 @@ enum ServiceRequestSource {
   Default = 614110004
 }
 
+/** Represents a time of day in a service request. */
+enum TimeOfDay {
+  /** 9 AM - 12 PM */
+  _0900_to_1200 = 614110000,
+  /** 12 PM - 4 PM */
+  _1200_to_1600 = 614110001,
+  /** 4 PM - 9 PM */
+  _1600_to_2100 = 614110002,
+  /** 9 PM - 11 PM */
+  _2100_to_2300 = 614110003,
+  /** 11 PM - 9 AM */
+  _2300_to_0900 = 614110004,
+  /** All the time */
+  allTheTime = 614110005
+}
+
 /**
  * The payload provided to the CreateServiceRequest API when
  * creating a new Housing Preservation and Development (HPD)
@@ -95,7 +111,7 @@ type CreateHPDServiceRequestPayload = {
   includeContactInfo?: boolean,
   locationDetails: string,
   siteBorough?: string,
-  whattimeofdaydoestheproblemoccur?: number,
+  whattimeofdaydoestheproblemoccur?: TimeOfDay,
   apartmentNumber?: string,
   contact: {
     firstName: string,
