@@ -64,6 +64,14 @@ type APIErrorBody = {
   }
 };
 
+/** Where a service request came from, I guess? */
+enum ServiceRequestSource {
+  Android = 614110000,
+  Other = 614110005,
+  iPhone = 614110008,
+  Default = 614110004
+}
+
 /**
  * The payload provided to the CreateServiceRequest API when
  * creating a new Housing Preservation and Development (HPD)
@@ -78,7 +86,7 @@ type CreateHPDServiceRequestPayload = {
   locationType: string,
   problem: string,
   problemDetails: string,
-  srsource?: number,
+  srsource?: ServiceRequestSource,
   additionalDetails: string,
   agency: 'HPD',
   anonymousRequired: 'Yes'|'No',
